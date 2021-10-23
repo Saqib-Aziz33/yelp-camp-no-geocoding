@@ -1,0 +1,31 @@
+<main class="container my-5">
+
+    <div class="card general-form login-form">
+        <img src="https://images.unsplash.com/photo-1571863533956-01c88e79957e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1074&q=80" class="card-img-top">
+        <div class="card-body">
+            <form action="/login" method="POST" novalidate class="validated-form">
+                <h3 class="fw-normal">Login</h3>
+                <div class="my-3">
+                    <label class="form-label" for="username">Username</label>
+                    <input class="form-control" required type="text" name="username" id="username">
+                    <div class="valid-feedback">seems goods</div>
+                    <div class="invalid-feedback">Feild is required</div>
+                </div>
+                <div class="my-3">
+                    <label class="form-label" for="password">Password</label>
+                    <input class="form-control" required type="password" name="password" id="password">
+                    <div class="valid-feedback">seems goods</div>
+                    <div class="invalid-feedback">Feild is required</div>
+                </div>
+                <span>Not have an account? <a href="/register">register here</a></span>
+        
+                <div class="d-grid gap-2 d-block my-3">
+                    <button class="btn btn-success" type="submit">Login</button>
+                  </div>
+            </form>
+        </div>
+      </div>
+
+    
+
+</main>

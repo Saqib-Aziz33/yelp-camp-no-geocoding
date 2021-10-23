@@ -1,0 +1,64 @@
+<main class="container">
+
+    <div id="campgroundsCrousel" class="carousel slide my-2" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#campgroundsCrousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#campgroundsCrousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#campgroundsCrousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="https://images.unsplash.com/photo-1492648272180-61e45a8d98a7?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1470&q=80" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Yelp Camp</h5>
+              <p>You can creat your own campground</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="https://images.unsplash.com/photo-1476041800959-2f6bb412c8ce?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Yelp Camp</h5>
+              <p>You can upload multiple images</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="https://images.unsplash.com/photo-1526491109672-74740652b963?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1470&q=80" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Yelp Camp</h5>
+              <p>You can register and login</p>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#campgroundsCrousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#campgroundsCrousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+    <div class="my-5">
+        <h1>All Campgrounds</h1>
+        <a href="/campgrounds/new">Add Campground</a>
+
+    <% for(let campground of campgrounds){ %> 
+    <div class="card my-3">
+        <div class="row">
+            <div class="col-md-4">
+                <img src="<%=campground.images[0].url%>" alt="image loading error" class="img-fluid">
+            </div>
+            <div class="col-md-8 card-body">
+                <h4 class="card-title"><%= campground.title %></h4>
+                <p class="card-text"><%= campground.description %></p>
+                <small class="text-muted"><%= campground.location %></small>
+                <br>
+                <br>
+                <a href="/campgrounds/<%=campground._id%>" class="card-link">Visit</a>
+            </div>
+        </div>
+    </div>
+    <% } %>
+    </div>
+</main>

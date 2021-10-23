@@ -1,0 +1,11 @@
+<div class="container my-5">
+    <div class="alert alert-danger" role="alert">
+        <h4 class="alert-heading">Error!</h4>
+        <p><%= err.message %> </p>
+        <% if(process.env.NODE_ENV !== "production"){ %> 
+        <small><%= err.stack %> </small>
+        <% } %> 
+        <hr>
+        <p class="mb-0">click here to go <a href="/">Home</a></p>
+    </div>
+</div>
