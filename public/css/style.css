@@ -66,12 +66,26 @@ h1,h2,h3,h4,h5,h6{
 }
 .alert-danger.alert-dismissible{
     animation-name: error-alert;
-    animation-iteration-count: 3;
+    animation-iteration-count: 2;
     animation-duration: 0.2s;
+    animation-timing-function: linear;
 }
 @keyframes error-alert{
     0%{transform: translateX(0px);}
     33%{transform: translateX(+20px);}
     66%{transform: translateX(-20px);}
     100%{transform: translateX(0px);}
+}
+
+
+
+
+/* register form */
+.register-form-image::before{
+    content: "This is an example of before content";
+}
+
+
+.bg-dark{
+    background-color: #353535 !important;
 }
