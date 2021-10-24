@@ -75,21 +75,3 @@ h1,h2,h3,h4,h5,h6{
     66%{transform: translateX(-20px);}
     100%{transform: translateX(0px);}
 }
-
-
-/* homepage */
-.homepage{
-    position: absolute;
-    top: 0px;
-    bottom: 0px;
-    left: 0;
-    right: 0;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.4)),url('https://images.unsplash.com/photo-1533873984035-25970ab07461?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1474&q=80');
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}

@@ -1,43 +1,37 @@
 <style>
     .bg-dark{
         background-color: transparent !important;
-    }   
-    .nav-link{
-        border-bottom: 2px solid transparent;
-        padding-left: 0;
-        padding-right: 0;
     }
-    .nav-link:hover{
-        border-bottom-color: white;
+    body{
+        background-image: linear-gradient(rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.4)),url('https://images.unsplash.com/photo-1533873984035-25970ab07461?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1474&q=80');
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
     }
-    .navbar{
-        z-index: 2;
+    .homepage{
+        height: 90vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        min-height: 400px;
     }
-    .navbar-toggler:focus{
-        box-shadow: none !important;
-    }
-    @media only screen and (max-width: 768px){
-        .my-inner-nav{
-            background-color: rgba(0, 0, 0, 0.6);
+    @media only screen and (min-width: 768px){
+        .nav-link{
+        border-bottom: 1px solid transparent;
         }
-        .my-inner-nav a:nth-of-type(1){
-        border-bottom-color: transparent !important;
-        color: white !important;
+        a:nth-child(1){
+            border-bottom-color: white;
+            color: white !important;
         }
     }
-    footer{
-        z-index: 2;
-    }
-    .my-inner-nav a:nth-of-type(1){
-        border-bottom-color: white;
-        color: white !important;
-    }
+    
 </style>
 
-<main class="container-xxl homepage text-white text-center">
+<main class="container-xxl homepage text-white text-center" style="max-width: 800px;">
     <h1 class="fw-normal">YelpCamp</h1>
     <p class="lead">Welcome to YelpCamp! <br>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vero voluptatibus iure ratione fugit nostrum deserunt, sit et sequi, vel velit, obcaecati ipsam labore repellat dolor eos excepturi non molestiae commodi aut in hic. Iusto corporis qui cupiditate dolores soluta explicabo.
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vero voluptatibus iure ratione fugit nostrum deserunt, sit et sequi, vel velit, obcaecati ipsam labore repellat dolor eos excepturi non molestiae commodi aut in hic.
     </p>
     <a class="btn btn-light" href="/campgrounds">View Campgrounds</a>
 </main>

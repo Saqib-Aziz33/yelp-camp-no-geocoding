@@ -33,7 +33,10 @@ module.exports.renderLogin = (req, res) => {
 module.exports.login = (req, res) => {
     req.flash('success', 'Welcome back')
     let redirectUrl = req.session.returnTo || '/campgrounds'
-    delete req.session.returnTo
+    req.session.returnTo = '/campgrounds'
+    if(redirectUrl = '/campgrounds/:id/reviews'){
+        redirectUrl = `/campgrounds`
+    }
     res.redirect(redirectUrl)
 }
 
