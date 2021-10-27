@@ -4,11 +4,13 @@
     font-family: 'Rubik', sans-serif;
 }
 nav .title{
-    font-family: 'Lobster Two', cursive;
+    /* font-family: 'Lobster Two', cursive; */
+    font-weight: 900;
 }
 
 h1,h2,h3,h4,h5,h6{
     font-weight: 500;
+    color: white;
 }
 
 /*campground forms */

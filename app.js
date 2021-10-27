@@ -14,17 +14,20 @@ const passport = require('passport')
 const localStrategy = require('passport-local')
 const mongoSanitize = require('express-mongo-sanitize')
 const helmet = require('helmet')
+const MongoStore = require('connect-mongo')
 //files
 const ExpressError = require('./utils/ExpressError')
 const campgroundRoutes = require('./routes/campground')
 const reviewsRoutes = require('./routes/reviews')
 const userRoutes = require('./routes/user')
 const User = require('./models/user')
+const Campground = require('./models/campground')
 
 
 
 //connection
-mongoose.connect(`mongodb://localhost:27017/yelp-camp`, {
+const dbUrl = process.env.DB_URL || 'mongodb://localhost:27017/yelp-camp'
+mongoose.connect(dbUrl, {
     useNewUrlParser: true,
     //useCreateIndex: true, option not supported
     useUnifiedTopology: true
@@ -46,9 +49,24 @@ app.use(express.static(path.join(__dirname, `public`)))
 app.use(express.urlencoded({extended: true}))
 app.use(express.json())
 app.use(methodOverride(`_method`))
+
+/* const store = MongoStore.create({
+    url: dbUrl,
+    secret: process.env.secret,
+    touchAfter: 24 * 60 * 60
+})
+store.on('error', e => {
+    console.log('session store error', e)
+}) */
+
 const sessionConfig = {
+    store: MongoStore.create({
+        mongoUrl: dbUrl,
+        secret: process.env.secret,
+        touchAfter: 24 * 3600
+    }),
     name: 'unsplash',
-    secret: 'thisshouldbeabettersecret',
+    secret: process.env.secret,
     resave: false,
     saveUninitialized: true,
     cookie: {
@@ -110,6 +128,10 @@ passport.use(new localStrategy(User.authenticate()))
 
 passport.serializeUser(User.serializeUser())
 passport.deserializeUser(User.deserializeUser())
+
+const findAdmin = async() => {
+    return 
+}
 
 //to use variables globally
 app.use((req, res, next) => {
